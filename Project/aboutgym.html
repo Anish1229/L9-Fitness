@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About L9 Fitness Gym</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;background-image: url('1.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 50px;
+            margin-left: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+            /* Removed background color */
+        }
+
+        .about-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .details-section {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(255, 123, 255, 0.1));
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #007BFF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .details-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            color: #555;
+            font-family: 'Georgia', serif;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .details-section .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .feature {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature i {
+            font-size: 50px;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature p {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .team-member {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .team-member-details {
+            margin-top: 15px;
+        }
+
+        .team-member-details h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .team-member-details p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #333;
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #007BFF;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .team-member:hover .overlay {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer-menu {
+            margin-bottom: 20px;
+        }
+
+        .footer-social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .footer-info {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .team-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-member {
+                width: 90%;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="show">
+        <img src="black.png" alt="L9 Fitness Gym Logo" class="logo">
+        <div class="title">L9 Fitness Gym</div>
+        <nav>
+            <ul>
+                 <li><a href="website.html">Home</a></li>
+                <li><a href="aboutgym.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h1>About Us</h1>
+            <p>Welcome to L9 Fitness Gym, where fitness meets community. Our dedicated team is committed to helping you achieve your fitness goals and lead a healthier lifestyle.</p>
+        </section>
+
+        <section class="details-section">
+            <h2>Why Choose L9 Fitness Gym?</h2>
+            <p>At L9 Fitness Gym, we believe in creating a supportive and inclusive environment for all our members. Our state-of-the-art facility is equipped with the latest fitness technology and offers a wide range of classes designed to cater to different fitness levels and interests. Whether you are looking to build strength, increase flexibility, or improve your overall health, we have something for everyone.</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Modern Equipment</h3>
+                    <p>Our gym is equipped with the latest fitness technology and modern equipment to help you achieve your fitness goals effectively and safely.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Support</h3>
+                    <p>Become part of a supportive and motivational community that will inspire you to reach your full potential and stay committed to your fitness journey.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-spa"></i>
+                    <h3>Holistic Approach</h3>
+                    <p>Our holistic approach to fitness includes yoga and meditation classes to help you achieve a balance between physical and mental well-being.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="team-member">
+                <img src="anish.jpg" alt="Anish">
+                <div class="overlay">Passionate Trainer</div>
+                <div class="team-member-details">
+                    <h3>Anish</h3>
+                    <p>Anish is our experienced personal trainer who is passionate about helping clients reach their maximum potential. With years of expertise in strength training and nutrition, he guides individuals towards their fitness goals with personalized workout plans and dietary advice.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="aayush.jpg" alt="Aayush">
+                <div class="overlay">Energetic Instructor</div>
+                <div class="team-member-details">
+                    <h3>Aayush</h3>
+                    <p>Aayush is our energetic group fitness instructor who believes in making workouts fun and engaging. With his dynamic personality and extensive knowledge of various exercise techniques, he leads high-energy classes that inspire members to push their limits and enjoy the journey towards better health.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="sujan.jpg" alt="Sujan">
+                <div class="overlay">Mindful Yogi</div>
+                <div class="team-member-details">
+                    <h3>Sujan</h3>
+                    <p>Sujan is our dedicated yoga instructor who fosters a sense of mindfulness and balance in our gym community. Through his calming presence and expertise in yoga poses and meditation, he helps individuals develop flexibility, strength, and inner peace, promoting holistic well-being.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="nishant.jpg" alt="Nisant">
+                <div class="overlay">Friendly Associate</div>
+                <div class="team-member-details">
+                    <h3>Nisant</h3>
+                    <p>Nisant is our friendly front desk associate who ensures smooth operations and excellent customer service at L9 Fitness Gym. With his welcoming smile and helpful demeanor, he assists members with their inquiries, schedules appointments, and ensures that everyone feels valued and supported.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-menu">
+           
+        </div>
+        <div class="footer-social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2024 L9 Fitness Gym. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

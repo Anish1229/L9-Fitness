@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L9 Fitness Gym</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .logo img {
+            max-width: 100px;
+            height: auto;
+        }
+        .title {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            font-size: 24px;
+        }
+        .menu {
+            background-color: #333;
+            color: #fff;
+            text-align: right;
+            padding: 10px 20px;
+        }
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+        .menu ul li:first-child {
+            margin-left: 0;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+        .personal-info {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .profile-pic {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .profile-pic img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 4px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .upload-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+            margin: 5px;
+        }
+        .upload-btn:hover {
+            background-color: #45a049;
+        }
+        .info-item {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .info-item label {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+        }
+        .info-item input {
+            width: calc(100% - 120px);
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+        .edit-btn, .delete-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+        .delete-btn {
+            background-color: #f44336;
+        }
+        .cancel-membership {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .cancel-membership h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .cancel-membership p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .cancel-membership .cancel-btn {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .cancel-membership .cancel-btn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="black.png" alt="L9 Fitness Gym Logo">
+        </div>
+        <div class="title">
+            L9 Fitness Gym
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="personal-info">
+        <div class="profile-pic">
+            <img src="default-profile-pic.jpg" alt="Profile Picture">
+            <button class="upload-btn">Upload Photo</button>
+        </div>
+        <h2>Personal Information</h2>
+        <div class="info-item">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="" readonly>
+        </div>
+        <div class="info-item">
+            <label for="address">Address:</label>
+            <input type="text" id="address" value="" readonly>
+        </div>
+        <div class="info-item">
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" value="" readonly>
+        </div>
+        <div class="info-item">
+            <label for="membership-type">Membership Type:</label>
+            <input type="text" id="membership-type" value="" readonly>
+        </div>
+        <div class="info-item">
+            <label for="membership-status">Membership Status:</label>
+            <input type="text" id="membership-status" value="" readonly>
+        </div>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+    </section>
+
+    <section class="cancel-membership">
+        <h2>Cancel Membership</h2>
+        <p>If you
+        <p>If you wish to cancel your membership, simply click the button below:</p>
+        <button class="cancel-btn">Cancel Membership</button>
+    </section>
+
+    <input type="file" id="profile-picture-upload" accept="image/*" style="display: none;">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const uploadButton = document.querySelector(".upload-btn");
+            const profilePictureInput = document.getElementById("profile-picture-upload");
+            const editButton = document.querySelector(".edit-btn");
+            const deleteButton = document.querySelector(".delete-btn");
+            const cancelMembershipButton = document.querySelector(".cancel-btn");
+
+            uploadButton.addEventListener("click", function() {
+                profilePictureInput.click();
+            });
+
+            profilePictureInput.addEventListener("change", function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function() {
+                        const profilePic = document.querySelector(".profile-pic img");
+                        profilePic.src = reader.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            editButton.addEventListener("click", function() {
+                const infoItems = document.querySelectorAll(".info-item input");
+                infoItems.forEach(function(item) {
+                    item.removeAttribute("readonly");
+                });
+            });
+
+            deleteButton.addEventListener("click", function() {
+                const confirmDelete = confirm("Are you sure you want to delete this entry?");
+                if (confirmDelete) {
+                    alert("Entry deleted.");
+                    // You may want to redirect or hide the entry here
+                }
+            });
+
+            cancelMembershipButton.addEventListener("click", function() {
+                const confirmCancel = confirm("Are you sure you want to cancel your membership?");
+                if (confirmCancel) {
+                    alert("Membership canceled.");
+                    // You may want to redirect or hide the membership details here
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L09 Fitness Gym</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .controls {
+            margin: 20px 0;
+        }
+
+        .controls input,
+        .controls select {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+        }
+
+        td {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        td input {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            border: none;
+            background: transparent;
+        }
+
+        .btn-redirect {
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-redirect:hover {
+            background-color: #0056b3;
+        }
+
+        tr:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="black.png" alt="L9 Fitness Gym Logo" class="logo">
+            <h1>L9 Fitness Gym</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+               <li><a href="admin_dashboard.php">Dashboard</a></li>
+                <li><a href="package.html">Plan & Package</a></li>
+                <li><a href="member.html">Member</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Gym Fitness Schedule</h2>
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <select id="filterSelect">
+                <option value="">Filter by...</option>
+                <option value="Gold">Gold</option>
+                <option value="Platinum">Platinum</option>
+                <option value="Diamond">Diamond </option>
+            </select>
+            <button onclick="searchAndFilter()">Apply</button>
+        </div>
+        <section id="schedule">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Membership Type</th>
+                        <th>Current Trainer</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="memberTable">
+                    <tr>
+                        <td contenteditable="true">Ravi Thapa</td>
+                        <td contenteditable="true">Diamond</td>
+                        <td contenteditable="true">Anish,Aayush,Sujan</td>
+                        <td><a href="personal schedule.html"><button class="btn-redirect" onclick="redirectToPage()">View</button></td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="true">Sandhya Aryal</td>
+                        <td contenteditable="true">Gold</td>
+                        <td contenteditable="true">Anish Thapa</td>
+                        <td><button class="btn-redirect" onclick="redirectToPage()">View</button></td>
+                    </tr>
+<tr>
+    <td contenteditable="true">Runner Rachel</td>
+    <td contenteditable="true">Platinum</td>
+    <td contenteditable="true">Aayush Pokhrel</td>
+    <td><button class="btn-redirect" onclick="redirectToPage()">View</button></td>
+</tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        function searchAndFilter() {
+            var searchInput = document.getElementById('searchInput').value.toLowerCase();
+            var filterSelect = document.getElementById('filterSelect').value.toLowerCase();
+            // Implement search and filter logic here
+            console.log("Search: " + searchInput + ", Filter: " + filterSelect);
+            // Example of displaying the search and filter values
+            alert("Search: " + searchInput + ", Filter: " + filterSelect);
+        }
+
+        function redirectToPage() {
+            // Redirect logic here
+            window.location.href = "details.html"; // Replace with your target URL
+        }
+    </script>
+</body>
+</html>

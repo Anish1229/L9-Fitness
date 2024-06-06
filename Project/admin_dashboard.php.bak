@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="show">
+        <img src="black.png" alt="L9 Fitness Gym Logo" class="logo">
+        <div class="title">L9 Fitness Gym</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard">
+            <div class="sidebar">
+              
+            </div>
+            <div class="content">
+                <h1>Welcome to the Gym Dashboard</h1>
+                <div class="content">
+                <div class="section" id="plan">
+                    <h2><i class="fas fa-calendar-alt"></i> Plan </h2>
+                    
+                </div>
+                <div class="section" id="packages">
+                    <h2><i class="fas fa-box-open"></i> Packages </h2>
+                    
+                </div>
+                <div class="section" id="members">
+                    <h2><a href="member.html"><i class="fas fa-users"></i> Members </h2>
+                    
+                </div>
+                <div class="section" id="trainers">
+                    <h2><i class="fas fa-user-tie"></i> Trainers </h2>
+                    
+                </div>
+                <div class="section" id="membership">
+                    <h2><i class="fas fa-certificate"></i> Membership Validity </h2>
+                    
+                </div>
+                <div class="section" id="appointments">
+                    <h2><i class="fas fa-calendar-check"></i> Appointments </h2>
+        
+                </div>
+                <!-- Add more sections as needed -->
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-menu">
+            
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2024 L9 Fitness Gym. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

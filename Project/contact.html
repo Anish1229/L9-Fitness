@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legalia - Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        header .logo h1 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #d9534f;
+        }
+
+        main {
+            padding: 50px;
+            background: url('1.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .contact-section {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            margin: 10px 0;
+        }
+
+        .contact-section a {
+            color: #d9534f;
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-section form input,
+        .contact-section form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-section form button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #d9534f;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-section form button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="black.png" alt="Legalia Logo">
+            <h1>L9 Fitness Gym</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="website.html">Home</a></li>
+                <li><a href="aboutgym.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h2>GET IN TOUCH.</h2>
+            <p>Phone: +2 (02) 2737 6756</p>
+            <p>Email: <a href="mailto:hamdy.mostafa@legaliacorp.com">hamdy.mostafa@legaliacorp.com</a></p>
+            <p>Address: 18 Mahmoud Azmy Street, off 26th July Street, Zamalek, Cairo, Egypt</p>
+            <form>
+                <input type="text" name="name" placeholder="YOUR NAME *" required>
+                <input type="email" name="email" placeholder="YOUR EMAIL *" required>
+                <input type="text" name="phone" placeholder="YOUR PHONE *" required>
+                <textarea name="message" placeholder="YOUR MESSAGE *" required></textarea>
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

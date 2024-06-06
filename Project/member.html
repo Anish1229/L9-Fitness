@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L9 Gym Fitness Members</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            width: 80px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav li {
+            margin-right: 20px;
+        }
+        nav a {
+            color: black;
+            text-decoration: none;
+            border: none;
+        }
+        h1 {
+            color: #000;
+            text-align: center;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            position: relative;
+            display: flex;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .member-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .member-info h3 {
+            margin: 0;
+            color: #333;
+        }
+        .member-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .actionBtn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+        .actionBtn:hover {
+            background-color: #0056b3;
+        }
+        #addMemberBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        #addMemberBtn:hover {
+            background-color: #0056b3;
+        }
+        #promptBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        #promptContainer {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+        .promptInput {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .promptButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .promptButton:hover {
+            background-color: #0056b3;
+        }
+        .search-filter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .search-filter div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .search-filter label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .search-filter input, .search-filter select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+            box-sizing: border-box;
+        }
+        #memberCount {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Bar -->
+    <header>
+        <div class="logo">
+            <img src="black.png" alt="L9 Fitness Logo">
+        </div>
+        <h1>L9 Fitness Home</h1>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <nav>
+            <ul>
+                <li><a href="admin_dashboard.php">Dashboard</a></li>
+                <li><a href="package.html">Plan & Package</a></li>
+                <li><a href="member.html">Member</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Member List</h1>
+    <!-- Search and Filter Section -->
+    <section class="search-filter">
+        <div>
+            <label for="searchInput">Search:</label>
+            <input type="text" id="searchInput" placeholder="Search members...">
+        </div>
+        <div>
+            <label for="filterSelect">Filter:</label>
+            <select id="filterSelect">
+                <option value="all">All</option>
+                <option value="diamond">Diamond</option>
+                <option value="gold">Gold</option>
+                <option value="platinum">Platinum</option>
+            </select>
+        </div>
+    </section>
+    <!-- Member Count -->
+    <div id="memberCount">Total Members: 3</div>
+    <div class="container">
+        <ul id="memberList">
+            <!-- Member entries -->
+            <li class="member">
+                <div class="member-info">
+                    <h3>Ravi Thapa</h3>
+                    <p>Age: 26</p>
+                    <p>Membership Type: Diamond</p>
+                </div>
+                <div class="actions">
+                    <button class="actionBtn morebtn deleteBtn">Delete</button>
+                    <button class="actionBtn morebtn editBtn">Edit</button>
+                    <a href="member details.html" class="actionBtn morebtn moreBtn">More</a>
+                </div>
+            </li>
+            <li class="member">
+                <div class="member-info">
+                    <h3>Sandhya Aryal</h3>
+                    <p>Age: 22</p>
+                    <p>Membership Type: Gold</p>
+                </div>
+                <div class="actions">
+                    <button class="actionBtn morebtn deleteBtn">Delete</button>
+                    <button class="actionBtn morebtn editBtn">Edit</button>
+                    <a href="sandhya.html" class="actionBtn morebtn moreBtn">More</a>
+                </div>
+            </li>
+            <li class="member">
+                <div class="member-info">
+                    <h3>Runner Rachel</h3>
+                    <p>Age: 30</p>
+                    <p>Membership Type: Platinum</p>
+                </div>
+                <div class="actions">
+                    <button class="actionBtn morebtn deleteBtn">Delete</button>
+                    <button class="actionBtn morebtn editBtn">Edit</button>
+                    <a href="runner_rachel.html" class="actionBtn morebtn moreBtn">More</a>
+                </div>
+            </li>
+        </ul>
+        <button id="addMemberBtn">Add Member</button>
+    </div>
+    <!-- Add/Edit Member Prompt -->
+    <div id="promptBackground">
+        <div id="promptContainer">
+            <h2>Add/Edit Member</h2>
+            <input type="text" id="nameInput" class="promptInput" placeholder="Name">
+            <input type="number" id="ageInput" class="promptInput" placeholder="Age">
+            <select id="membershipInput" class="promptInput">
+                <option value="diamond">Diamond</option>
+                <option value="gold">Gold</option>
+                <option value="platinum">Platinum</option>
+            </select>
+            <button id="saveBtn" class="promptButton">Save</button>
+            <button id="cancelBtn" class="promptButton">Cancel</button>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 L9 Gym Fitness. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/yourpage"><i class="material-icons">facebook</i></a>
+            <a href="https://www.twitter.com/yourpage"><i class="material-icons">twitter</i></a>
+            <a href="https://www.instagram.com/yourpage"><i class="material-icons">instagram</i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addMemberBtn = document.getElementById("addMemberBtn");
+            const promptBackground = document.getElementById("promptBackground");
+            const cancelBtn = document.getElementById("cancelBtn");
+            const saveBtn = document.getElementById("saveBtn");
+            const memberList = document.getElementById("memberList");
+            const searchInput = document.getElementById("searchInput");
+            const filterSelect = document.getElementById("filterSelect");
+            const memberCount = document.getElementById("memberCount");
+            
+            let members = [
+                { name: "Ravi Thapa", age: 26, membership: "diamond" },
+                { name: "Sandhya Aryal", age: 22, membership: "gold" },
+                { name: "Runner Rachel", age: 30, membership: "platinum" }
+            ];
+
+            function renderMembers() {
+                memberList.innerHTML = "";
+                const filteredMembers = members.filter(member => {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    const filter = filterSelect.value;
+                    const matchesSearch = member.name.toLowerCase().includes(searchTerm);
+                    const matchesFilter = filter === "all" || member.membership === filter;
+                    return matchesSearch && matchesFilter;
+                });
+
+                filteredMembers.forEach(member => {
+                    const li = document.createElement("li");
+                    li.classList.add("member");
+                    li.innerHTML = `
+                        <div class="member-info">
+                            <h3>${member.name}</h3>
+                            <p>Age: ${member.age}</p>
+                            <p>Membership Type: ${member.membership.charAt(0).toUpperCase() + member.membership.slice(1)}</p>
+                        </div>
+                        <div class="actions">
+                            <button class="actionBtn morebtn deleteBtn">Delete</button>
+                            <button class="actionBtn morebtn editBtn">Edit</button>
+                            <a href="member details.html" class="actionBtn morebtn moreBtn">More</a>
+                        </div>
+                    `;
+
+                    const deleteBtn = li.querySelector(".deleteBtn");
+                    deleteBtn.addEventListener("click", () => {
+                        if (confirm(`Are you sure you want to delete ${member.name}?`)) {
+                            members = members.filter(m => m !== member);
+                            renderMembers();
+                        }
+                    });
+
+                    const editBtn = li.querySelector(".editBtn");
+                    editBtn.addEventListener("click", () => {
+                        openPrompt(member);
+                    });
+
+                    const moreBtn = li.querySelector(".moreBtn");
+                    moreBtn.addEventListener("click", () => {
+                        alert(`Name: ${member.name}\nAge: ${member.age}\nMembership Type: ${member.membership.charAt(0).toUpperCase() + member.membership.slice(1)}`);
+                    });
+
+                    memberList.appendChild(li);
+                });
+
+                memberCount.textContent = `Total Members: ${filteredMembers.length}`;
+            }
+
+            function openPrompt(member = null) {
+                promptBackground.style.display = "flex";
+                if (member) {
+                    document.getElementById("nameInput").value = member.name;
+                    document.getElementById("ageInput").value = member.age;
+                    document.getElementById("membershipInput").value = member.membership;
+                    saveBtn.onclick = () => {
+                        member.name = document.getElementById("nameInput").value;
+                        member.age = document.getElementById("ageInput").value;
+                        member.membership = document.getElementById("membershipInput").value;
+                        closePrompt();
+                        renderMembers();
+                    };
+                } else {
+                    document.getElementById("nameInput").value = "";
+                    document.getElementById("ageInput").value = "";
+                    document.getElementById("membershipInput").value = "diamond";
+                    saveBtn.onclick = () => {
+                        const newMember = {
+                            name: document.getElementById("nameInput").value,
+                            age: document.getElementById("ageInput").value,
+                            membership: document.getElementById("membershipInput").value
+                        };
+                        members.push(newMember);
+                        closePrompt();
+                        renderMembers();
+                    };
+                }
+            }
+
+            function closePrompt() {
+                promptBackground.style.display = "none";
+            }
+
+            addMemberBtn.addEventListener("click", () => openPrompt());
+            cancelBtn.addEventListener("click", closePrompt);
+
+            searchInput.addEventListener("input", renderMembers);
+            filterSelect.addEventListener("change", renderMembers);
+
+            renderMembers();
+        });
+    </script>
+</body>
+</html>

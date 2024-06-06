@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Membership</title>
+    <style>
+        /* CSS styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: black; /* Green */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo-title img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu li {
+            margin: 0 15px;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .add-member {
+            background-color: white;
+            color: #4CAF50;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-grow: 1;
+        }
+        .membership-section {
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            text-align: center;
+            width: 300px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .gold-section {
+            background-color: #FFD700; /* Gold */
+            color: #333;
+        }
+        .platinum-section {
+            background-color: #C0C0C0; /* Silver */
+            color: #333;
+        }
+        .diamond-section {
+            background-color: #B0E0E6; /* Light Blue */
+            color: #333;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 24px;
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+        a.membership-section:hover {
+            text-decoration: none;
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-title">
+            <img src="black.png" alt="Logo">
+            <h1>L9 Fitness</h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Membership Sections -->
+    <div class="container">
+        <!-- Gold Membership -->
+        <a href="payment.html" class="membership-section gold-section">
+            <img class="icon" src="gold.png" alt="Gold Icon">
+            <h2>Gold Membership</h2>
+            <ul>
+                <li>Access to all gym facilities</li>
+                <li>Personalized workout plans</li>
+                <li>Monthly health assessment</li>
+                <li>Discounts on fitness classes</li>
+            </ul>
+            <div class="price">$50 per month</div>
+        </a>
+
+        <!-- Platinum Membership -->
+        <a href="platinumpay.html" class="membership-section platinum-section">
+            <img class="icon" src="pal.png" alt="Platinum Icon">
+            <h2>Platinum Membership</h2>
+            <ul>
+                <li>All benefits of Diamond Membership</li>
+                <li>24/7 access to the gym</li>
+                <li>Complimentary nutrition consultation</li>
+                <li>Free access to all fitness classes</li>
+            </ul>
+            <div class="price">$100 per month</div>
+        </a>
+
+        <!-- Diamond Membership -->
+        <a href="diamondpay.html" class="membership-section diamond-section">
+            <img class="icon" src="dia.png" alt="Diamond Icon">
+            <h2>Diamond Membership</h2>
+            <ul>
+                <li>All benefits of Gold Membership</li>
+                <li>Priority booking for personal training sessions</li>
+                <li>Free access to premium fitness equipment</li>
+                <li>Exclusive access to VIP events</li>
+            </ul>
+            <div class="price">$75 per month</div>
+        </a>
+    </div>
+    <li><a class="add-member" href="member.html">Add Member</a></li>
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Package Plan</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('e.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        nav .logo img {
+            width: 50px;
+            height: auto;
+        }
+        nav h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+        .package-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .package {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .package:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 1);
+        }
+        .package h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .package .badge {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            line-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .flex-plan {
+            background-color: #76c7c0;
+        }
+        .commit-plan {
+            background-color: #ffcc00;
+        }
+        .elite-plan {
+            background-color: #ff6f61;
+        }
+        .package a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .package a:hover {
+            color: #0056b3;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">
+            <img src="black.png" alt="L9 Fitness Gym Logo">
+        </div>
+        <h1>L9 Fitness Gym</h1>
+        <ul>
+            <li><a href="admin_dashboard.php">Dashboard</a></li>
+            <li><a href="package.html">Plan & Package</a></li>
+            <li><a href="member.html">Member</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header with Member Package Plan -->
+    <header>
+        <h1>Member Package Plan</h1>
+        <p>Choose the plan that best fits your fitness goals.</p>
+    </header>
+
+    <!-- Container for Membership Packages -->
+    <div class="container">
+        <div class="package-container">
+            <!-- Monthly Membership -->
+            <div class="package">
+                <div class="badge flex-plan">Flex</div>
+                <h2>Monthly</h2>
+                <p>Get access to all gym facilities with our flexible monthly plan.</p>
+                <a href="gold.html">Learn More</a>
+            </div>
+            <!-- Yearly Membership -->
+            <div class="package">
+                <div class="badge elite-plan">Elite</div>
+                <h2>Yearly</h2>
+                <p>Commit to a full year and enjoy exclusive benefits and discounts.</p>
+                <a href="elite.html">Learn More</a>
+            </div>
+            <!-- Quarterly Membership -->
+            <div class="package">
+                <div class="badge commit-plan">Commit</div>
+                <h2>Quarterly</h2>
+                <p>Perfect for those who prefer a short-term commitment with added perks.</p>
+                <a href="commit.html">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 L9 Fitness Gym. All rights reserved.</p>
+        <p>123 Fitness Lane, Workout City, Fitland</p>
+        <p>Contact us: <a href="mailto:info@l9fitnessgym.com">info@l9fitnessgym.com</a></p>
+    </footer>
+</body>
+</html>

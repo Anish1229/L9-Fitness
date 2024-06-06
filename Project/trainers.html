@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L9 Fitness Trainers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('pic2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-input {
+            padding: 8px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .search-icon {
+            cursor: pointer;
+            margin-left: -30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .actionBtn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .actionBtn:hover {
+            background-color: #0056b3;
+        }
+        #addMemberBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        #addMemberBtn:hover {
+            background-color: #0056b3;
+        }
+        #promptBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        #promptContainer {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+        .promptInput {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .promptButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .promptButton:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <img src="black.png" alt="Level 9 Fitness Gym Logo">
+            <h1> L9 Fitness Gym</h1>
+        </div>
+        <div class="nav-links">
+            <li><a href="admin_dashboard.php">Dashboard</a></li>
+            <li><a href="package.html">Plan & Package</a></li>
+            <li><a href="member.html">Member</a></li>
+            <li><a href="trainers.html">Tainers</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </div>
+    </div>
+    <div class="container">
+        <h1>L9 Fitness Trainers</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search trainers...">
+            <img src="search-icon.png" alt="Search" class="search-icon" onclick="searchTrainers()">
+        </div>
+        <table id="trainerTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Fitness Speciality</th>
+                    <th>Hourly Rate</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aayush Adhikari</td>
+                    <td>35</td>
+                    <td>Bodybuilding</td>
+                    <td>$50</td>
+                    <td class="actions">
+                        <button class="actionBtn deleteBtn">Delete</button>
+                        <button class="actionBtn editBtn">Edit</button>
+                        <a href="more.html"><button class="actionBtn morebtn">More</button></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Anish Thapa</td>
+                    <td>40</td>
+                    <td>Personal Training</td>
+                    <td>$40</td>
+                    <td class="actions">
+                        <button class="actionBtn deleteBtn">Delete</button>
+                        <button class="actionBtn editBtn">Edit</button>
+                        <a href="more.html"><button class="actionBtn morebtn">More</button></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sujan Pokhrel</td>
+                    <td>30</td>
+                    <td>Yoga</td>
+                    <td>$45</td>
+                    <td class="actions">
+                        <button class="actionBtn deleteBtn">Delete</button>
+                        <button class="actionBtn editBtn">Edit</button>
+                        <a href="more.html"><button class="actionBtn morebtn">More</button></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="trainerCount">Total Trainers: <span id="trainerCountNumber">3</span></div>
+        <button id="addMemberBtn">Add Trainer</button>
+    </div>
+
+    <!-- Prompt background and container -->
+    <div id="promptBackground">
+        <div id="promptContainer">
+            <h2 id="promptTitle">Add Trainer</h2>
+            <input type="text" id="nameInput" class="promptInput" placeholder="Enter trainer name">
+            <br>
+            <input type="number" id="ageInput" class="promptInput" placeholder="Enter trainer age">
+            <br>
+            <input type="text" id="specialityInput" class="promptInput" placeholder="Enter fitness speciality">
+            <br>
+            <input type="number" id="hourlyRateInput" class="promptInput" placeholder="Enter hourly rate">
+            <br>
+            <button id="confirmBtn" class="promptButton">Add</button>
+            <button id="cancelBtn" class="promptButton" style="margin-left: 10px;">Cancel</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 L9 Fitness Gym. All rights reserved.
+    </div>
+
+    <script>
+        // Add Trainer button click event
+        document.getElementById('addMemberBtn').addEventListener('click', function() {
+            // Show the prompt
+            document.getElementById('promptBackground').style.display = 'flex';
+            document.getElementById('promptTitle').textContent = 'Add Trainer';
+            document.getElementById('confirmBtn').textContent = 'Add';
+        });
+
+        // Cancel button click event
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            // Hide the prompt
+            document.getElementById('promptBackground').style.display = 'none';
+        });
+
+        // Confirm button click event
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            // Get input values
+            var name = document.getElementById('nameInput').value;
+            var age = document.getElementById('ageInput').value;
+            var speciality = document.getElementById('specialityInput').value;
+            var hourlyRate = document.getElementById('hourlyRateInput').value;
+
+            if (name && age && speciality && hourlyRate) {
+                // Create new trainer entry
+                var trainerTable = document.getElementById('trainerTable').getElementsByTagName('tbody')[0];
+
+                var row = trainerTable.insertRow();
+                var nameCell = row.insertCell(0);
+                var ageCell = row.insertCell(1);
+                var specialityCell = row.insertCell(2);
+                var hourlyRateCell = row.insertCell(3);
+                var actionsCell = row.insertCell(4);
+
+                nameCell.textContent = name;
+                ageCell.textContent = age;
+                specialityCell.textContent = speciality;
+                hourlyRateCell.textContent = '$' + hourlyRate;
+
+                actionsCell.classList.add('actions');
+                var deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.classList.add('actionBtn', 'deleteBtn');
+                deleteBtn.addEventListener('click', function() {
+                    trainerTable.removeChild(row);
+                    updateTrainerCount();
+                });
+
+                var editBtn = document.createElement('button');
+                editBtn.textContent = 'Edit';
+                editBtn.classList.add('actionBtn', 'editBtn');
+                editBtn.addEventListener('click', function() {
+                    document.getElementById('promptTitle').textContent = 'Edit Trainer';
+                    document.getElementById('confirmBtn').textContent = 'Save';
+                    document.getElementById('nameInput').value = name;
+                    document.getElementById('ageInput').value = age;
+                    document.getElementById('specialityInput').value = speciality;
+                    document.getElementById('hourlyRateInput').value = hourlyRate;
+                    document.getElementById('promptBackground').style.display = 'flex';
+                    editBtn.style.display = 'none';
+                    deleteBtn.style.display = 'none';
+                    document.getElementById('confirmBtn').onclick = function() {
+                        var newName = document.getElementById('nameInput').value;
+                        var newAge = document.getElementById('ageInput').value;
+                        var newSpeciality = document.getElementById('specialityInput').value;
+                        var newHourlyRate = document.getElementById('hourlyRateInput').value;
+
+                        if (newName && newAge && newSpeciality && newHourlyRate) {
+                            nameCell.textContent = newName;
+                            ageCell.textContent = newAge;
+                            specialityCell.textContent = newSpeciality;
+                            hourlyRateCell.textContent = '$' + newHourlyRate;
+                            document.getElementById('promptBackground').style.display = 'none';
+                            editBtn.style.display = 'inline-block';
+                            deleteBtn.style.display = 'inline-block';
+                        } else {
+                            alert('Please enter valid trainer details.');
+                        }
+                    };
+                });
+
+                actionsCell.appendChild(editBtn);
+                actionsCell.appendChild(deleteBtn);
+
+                // Clear input fields
+                document.getElementById('nameInput').value = '';
+                document.getElementById('ageInput').value = '';
+                document.getElementById('specialityInput').value = '';
+                document.getElementById('hourlyRateInput').value = '';
+
+                // Hide the prompt
+                document.getElementById('promptBackground').style.display = 'none';
+
+                // Update trainer count
+                updateTrainerCount();
+            } else {
+                alert('Please enter valid trainer details.');
+            }
+        });
+
+        // Search function
+        function searchTrainers() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var rows = document.querySelectorAll('#trainerTable tbody tr');
+
+            rows.forEach(function(row) {
+                var name = row.cells[0].textContent.toLowerCase();
+                if (name.includes(input)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', searchTrainers);
+
+        // Function to update the trainer count
+        function updateTrainerCount() {
+            var trainerTable = document.getElementById('trainerTable').getElementsByTagName('tbody')[0];
+            var rowCount = trainerTable.rows.length;
+            document.getElementById('trainerCountNumber').textContent = rowCount;
+        }
+
+        // Initialize trainer count on page load
+        document.addEventListener('DOMContentLoaded', updateTrainerCount);
+    </script>
+</body>
+</html>
